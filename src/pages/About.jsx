@@ -1,4 +1,26 @@
 import { FaChartPie, FaUserTie, FaStar, FaHandshake, FaMapMarkerAlt } from 'react-icons/fa';
+import { useEffect } from 'react';
+
+// Add custom keyframes for fade-in-up
+const fadeInUpStyle = `
+@keyframes fadeinup {
+  0% { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeinup {
+  animation: fadeinup 1.1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+`;
+
+function FadeInUpStyle() {
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = fadeInUpStyle;
+    document.head.appendChild(style);
+    return () => { document.head.removeChild(style); };
+  }, []);
+  return null;
+}
 
 function About({ language }) {
   const sections = [
@@ -100,30 +122,33 @@ function About({ language }) {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-[60vh] bg-white text-center p-4 pt-32 pb-64">
-      <img src="/redstone2.jpg" alt="Redstone Capital Alternate Logo" className="w-36 h-36 mb-4 rounded-lg"/>
-      <h2 className="text-2xl font-bold text-red-800 mb-6">
-        {language === 'en' ? 'About Us' : '关于我们'}
-      </h2>
-      <div className="w-full max-w-3xl grid gap-6">
-        {sections.map((section, idx) => (
-          <div
-            key={section.title}
-            className={`relative ${section.bg} rounded-xl shadow-lg p-6 text-left flex flex-col items-start border-l-8 border-red-200 hover:border-red-700 transition-all duration-300 animate-fadein`}
-            style={{ animationDelay: `${idx * 80}ms` }}
-          >
-            <div className="flex items-center mb-2 w-full">
-              <span className="mr-2">{section.icon}</span>
-              <h3 className="text-lg font-bold text-red-800">{section.title}</h3>
+    <>
+      <FadeInUpStyle />
+      <div className="flex flex-col items-center min-h-[60vh] bg-white text-center p-4 pt-32 pb-64">
+        <img src="/redstone2.jpg" alt="Redstone Capital Alternate Logo" className="w-36 h-36 mb-4 rounded-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s]"/>
+        <h2 className="text-2xl font-bold text-red-800 mb-6 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.2s]">
+          {language === 'en' ? 'About Us' : '关于我们'}
+        </h2>
+        <div className="w-full max-w-3xl grid gap-6">
+          {sections.map((section, idx) => (
+            <div
+              key={section.title}
+              className={`relative ${section.bg} rounded-xl shadow-lg p-6 text-left flex flex-col items-start border-l-8 border-red-200 hover:border-red-700 transition-all duration-300 opacity-0 translate-y-8 animate-fadeinup`}
+              style={{ animationDelay: `${0.3 + idx * 0.15}s` }}
+            >
+              <div className="flex items-center mb-2 w-full">
+                <span className="mr-2">{section.icon}</span>
+                <h3 className="text-lg font-bold text-red-800">{section.title}</h3>
+              </div>
+              <div className="pl-0 w-full">{section.content}</div>
             </div>
-            <div className="pl-0 w-full">{section.content}</div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <a href="/contact" className="mt-8 inline-block bg-red-800 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-black transition text-base opacity-0 translate-y-8 animate-fadeinup [animation-delay:1.2s]">
+          {language === 'en' ? 'Contact Us' : '联系我们'}
+        </a>
       </div>
-      <a href="/contact" className="mt-8 inline-block bg-red-800 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-black transition text-base animate-fadein">
-        {language === 'en' ? 'Contact Us' : '联系我们'}
-      </a>
-    </div>
+    </>
   );
 }
 

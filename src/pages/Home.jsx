@@ -33,7 +33,7 @@ function Home({ language }) {
         <img
           src="/redstone1.jpg"
           alt="Redstone Capital Logo"
-          className="w-40 h-40 mb-4 rounded-full border-4 border-red-800 shadow-xl opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s] bg-white"
+          className="w-48 h-48 mb-4 rounded-full border-4 border-red-800 shadow-xl opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s] bg-white"
         />
         <h1 className="text-4xl font-extrabold text-red-800 mb-2 drop-shadow-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.2s]">
           {language === 'en' ? 'Welcome to 红石厚峰' : '欢迎来到红石厚峰'}
@@ -42,7 +42,7 @@ function Home({ language }) {
         <p className="text-xl text-black max-w-2xl mb-6 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.6s]">
           {language === 'en'
             ? 'Redstone Capital is a leading Chinese alternative investment firm, deeply focused on the healthcare sector and strategic industries. We specialize in empowering businesses and entrepreneurs through long-term capital and deep domain expertise. Our portfolio spans biopharmaceuticals, high-end manufacturing, and new-generation information technologies.\n\nOur mission is to be a creator of lasting value and a trusted partner for innovation-driven enterprises across China and globally'
-            : '红石厚峰是一家中国领先的另类投资管理机构，深耕生物医药等战略性行业。我们致力于通过长期资本和专业赋能，助力企业家和创业公司在中国及全球实现可持续增长。\n\n我们的投资覆盖生物医药、高端制造、新一代信息技术等领域，并与多家战略伙伴建立了深入合作关系。\n\n我们的使命是成为推动价值创造的引领者，以及创新驱动型企业的长期合作伙伴。'}
+            : '红石厚峰是中国领先的另类投资管理机构，深耕生物医药等战略性行业。我们致力于通过长期资本和专业赋能，助力企业家和创业公司在中国及全球实现可持续增长。\n\n我们的投资覆盖生物医药、高端制造、新一代信息技术等领域，并与多家战略伙伴建立了深入合作关系。\n\n我们的使命是成为推动价值创造的引领者，以及创新驱动型企业的长期合作伙伴。'}
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
           <div className="card-modern bg-red-50 border-l-4 border-red-800 p-10 rounded shadow w-56 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.8s]">
