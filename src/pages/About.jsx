@@ -101,7 +101,7 @@ function About({ language }) {
 
   return (
     <div className="flex flex-col items-center min-h-[60vh] bg-white text-center p-4 pt-32 pb-64">
-      <img src="/redstone2.jpg" alt="Redstone Capital Alternate Logo" className="w-24 h-24 mb-4 rounded-lg"/>
+      <img src="/redstone2.jpg" alt="Redstone Capital Alternate Logo" className="w-36 h-36 mb-4 rounded-lg"/>
       <h2 className="text-2xl font-bold text-red-800 mb-6">
         {language === 'en' ? 'About Us' : '关于我们'}
       </h2>
