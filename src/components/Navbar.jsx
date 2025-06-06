@@ -20,10 +20,10 @@ function Navbar({ language, onLanguageToggle }) {
   return (
     <nav className="glass border-b-2 border-red-800 w-full fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2 group">
           <img src="/redstone2.jpg" alt="Redstone Capital Logo" className="h-12 w-12 rounded-lg" />
           <span className="text-xl font-extrabold text-red-800 tracking-wide">红石厚峰</span>
-        </div>
+        </Link>
         <div className="flex items-center space-x-6">
           {navLinks.map(link => (
             <Link

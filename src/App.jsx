@@ -9,7 +9,7 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('zh');
   const handleLanguageToggle = () => setLanguage((prev) => (prev === 'en' ? 'zh' : 'en'));
 
   return (
