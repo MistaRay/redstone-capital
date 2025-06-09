@@ -33,7 +33,7 @@ function Home({ language }) {
         <img
           src="/redstone1.jpg"
           alt="Redstone Capital Logo"
-          className="w-48 h-48 mb-4 rounded-full border-4 border-red-800 shadow-xl opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s] bg-white"
+          className="w-48 h-48 mb-4 rounded-full shadow-xl opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s] bg-white"
         />
         <h1 className="text-4xl font-extrabold text-red-800 mb-2 drop-shadow-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.2s]">
           {language === 'en' ? 'Welcome to 红石厚峰' : '欢迎来到红石厚峰'}

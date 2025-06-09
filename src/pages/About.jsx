@@ -57,46 +57,6 @@ function About({ language }) {
       )
     },
     {
-      icon: <FaUserTie className="text-red-700 text-2xl mb-2" />, bg: 'bg-white',
-      title: language === 'en' ? 'Leadership' : '管理团队',
-      content: language === 'en'
-        ? `Wu Minfeng, Managing Partner, leads the biopharmaceutical investment strategy. He co-founded Redstone Capital in 2023. Previously, he was a Partner at CDH Investments, and has held roles at CITIC Capital, BCG, and Standard Chartered Bank. Mr. Wu holds degrees from Fudan University, Wharton (UPenn), and Cheung Kong Graduate School of Business.`
-        : `公司管理合伙人伍旻锋先生在生物医药领域有着深厚的布局经验。2023年共同创立红石资本，曾任鼎晖投资集团合伙人，负责医疗、金融、TMT等领域投资。早年在中信资本、波士顿咨询、渣打银行从事投资与战略规划。毕业于复旦大学、宾大沃顿商学院、长江商学院。`
-    },
-    {
-      icon: <FaStar className="text-red-700 text-2xl mb-2" />, bg: 'bg-red-50',
-      title: language === 'en' ? 'Notable Projects' : '代表项目',
-      content: (
-        <ul className="text-left ml-4 list-disc">
-          {language === 'en' ? (
-            <>
-              <li>Yuanda Health (0512.HK)</li>
-              <li>Dashenlin Pharmacy (603233.SH)</li>
-              <li>Sirtex Medical</li>
-              <li>Lufax (06623.HK, NYSE: LU)</li>
-              <li>Meituan (03690.HK)</li>
-              <li>Man Wah Holdings (01999.HK)</li>
-              <li>Sainty Membrane (688101.SH)</li>
-              <li>AliSports</li>
-              <li>Guazi.com</li>
-            </>
-          ) : (
-            <>
-              <li>远大健康（0512.HK）</li>
-              <li>大参林（603233.SH）</li>
-              <li>社泰医药（Sirtex）</li>
-              <li>陆金所（06623.HK，NYSE:LU）</li>
-              <li>美团（03690.HK）</li>
-              <li>敏华集团（01999.HK）</li>
-              <li>三达膜（688101.SH）</li>
-              <li>阿里体育</li>
-              <li>瓜子二手车</li>
-            </>
-          )}
-        </ul>
-      )
-    },
-    {
       icon: <FaHandshake className="text-red-700 text-2xl mb-2" />, bg: 'bg-white',
       title: language === 'en' ? 'Landmark Deals' : '标志性交易',
       content: language === 'en'
@@ -125,7 +85,7 @@ function About({ language }) {
     <>
       <FadeInUpStyle />
       <div className="flex flex-col items-center min-h-[60vh] bg-white text-center p-4 pt-32 pb-64">
-        <img src="/redstone2.jpg" alt="Redstone Capital Alternate Logo" className="w-36 h-36 mb-4 rounded-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s]"/>
+        <img src="/redstone1.jpg" alt="Redstone Capital Alternate Logo" className="w-60 h-58 mb-4 rounded-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s]"/>
         <h2 className="text-2xl font-bold text-red-800 mb-6 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.2s]">
           {language === 'en' ? 'About Us' : '关于我们'}
         </h2>
