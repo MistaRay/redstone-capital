@@ -26,7 +26,7 @@ function Contact({ language }) {
   return (
     <>
       <FadeInUpStyle />
-      <div className="flex flex-col md:flex-row items-center justify-center min-h-[60vh] bg-white text-center p-4 pt-48 pb-64 gap-8">
+      <div className="flex flex-col md:flex-row items-center justify-center min-h-[60vh] bg-gradient-to-br from-red-50 via-white to-red-100 text-center p-4 pt-48 pb-64 gap-8">
         {/* Left: Contact Form & Details */}
         <div className="flex-1 max-w-md w-full flex flex-col items-center mb-8 md:mb-0">
           <h2 className="text-xl font-bold text-red-800 mb-2 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s]">

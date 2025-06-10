@@ -107,7 +107,7 @@ export default function Portfolio({ language = 'en' }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
   return (
-    <div className="min-h-screen bg-white pt-36 pb-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100 pt-36 pb-16 px-4">
       <h2 className="text-3xl font-bold text-red-800 mb-10 text-center">
         {language === 'en' ? 'Portfolio Companies' : '投资组合企业'}
       </h2>
@@ -118,7 +118,7 @@ export default function Portfolio({ language = 'en' }) {
             href={company.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group rounded-xl shadow-lg border border-red-200 bg-white overflow-hidden h-64 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer fade-in-up ${mounted ? 'fade-in-up-active' : ''}`}
+            className={`relative group rounded-xl shadow-lg bg-white overflow-hidden h-64 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer fade-in-up ${mounted ? 'fade-in-up-active' : ''}`}
             style={{ transitionDelay: `${idx * 80}ms` }}
           >
             <img 

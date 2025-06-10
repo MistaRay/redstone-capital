@@ -84,7 +84,7 @@ function About({ language }) {
   return (
     <>
       <FadeInUpStyle />
-      <div className="flex flex-col items-center min-h-[60vh] bg-white text-center p-4 pt-32 pb-64">
+      <div className="flex flex-col items-center min-h-[60vh] bg-gradient-to-br from-red-50 via-white to-red-100 text-center p-4 pt-32 pb-64">
         <img src="/redstone1.jpg" alt="Redstone Capital Alternate Logo" className="w-60 h-58 mb-4 rounded-lg opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.1s]"/>
         <h2 className="text-2xl font-bold text-red-800 mb-6 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.2s]">
           {language === 'en' ? 'About Us' : '关于我们'}

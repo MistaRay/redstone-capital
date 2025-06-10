@@ -21,7 +21,7 @@ function Navbar({ language, onLanguageToggle }) {
     <nav className="glass border-b-2 border-red-800 w-full fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
         <Link to="/" className="flex items-center space-x-2 group">
-          <img src="/redstone1.jpg" alt="Redstone Capital Logo" className="h-14 w-14 rounded-lg mt-2" />
+          <img src="/redstone1-removebg-preview.png" alt="Redstone Capital Logo" className="h-14 w-14 rounded-lg mt-2" />
           <span className="text-2xl font-extrabold text-red-800 tracking-wide">红石厚峰</span>
         </Link>
         <div className="flex items-center space-x-6">
