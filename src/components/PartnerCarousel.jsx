@@ -60,16 +60,34 @@ const bottomRow = partners.slice(half);
 
 export default function PartnerCarousel({ language = 'en' }) {
   return (
-    <div className="w-full bg-white py-12">
-      <h2 className="text-2xl font-semibold text-center mb-8">
+    <div className="w-full bg-white py-8 sm:py-12">
+      <h2 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8">
         {language === 'en' ? 'Our Partners' : '我们的合作伙伴'}
       </h2>
-      <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+      <div className="flex flex-col gap-6 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
         {/* Top row: moves left (default) */}
         <Swiper
           modules={[Autoplay]}
           slidesPerView={5}
           spaceBetween={30}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 12,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 30,
+            },
+          }}
           loop={true}
           autoplay={{
             delay: 0,
@@ -80,11 +98,12 @@ export default function PartnerCarousel({ language = 'en' }) {
         >
           {topRow.map((partner) => (
             <SwiperSlide key={partner.alt} className="flex justify-center items-center">
-              <div className="h-24 w-40 flex items-center justify-center px-2">
+              <div className="h-16 sm:h-20 md:h-24 w-28 sm:w-32 md:w-40 flex items-center justify-center px-1 sm:px-2">
                 <img
                   src={partner.src}
                   alt={partner.alt}
-                  className="max-h-16 object-contain transition-all duration-300"
+                  className="object-contain transition-all duration-300 mx-auto max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24"
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             </SwiperSlide>
@@ -95,6 +114,24 @@ export default function PartnerCarousel({ language = 'en' }) {
           modules={[Autoplay]}
           slidesPerView={5}
           spaceBetween={30}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 12,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 30,
+            },
+          }}
           loop={true}
           autoplay={{
             delay: 0,
@@ -106,11 +143,12 @@ export default function PartnerCarousel({ language = 'en' }) {
         >
           {bottomRow.map((partner) => (
             <SwiperSlide key={partner.alt} className="flex justify-center items-center">
-              <div className="h-24 w-40 flex items-center justify-center px-2">
+              <div className="h-16 sm:h-20 md:h-24 w-28 sm:w-32 md:w-40 flex items-center justify-center px-1 sm:px-2">
                 <img
                   src={partner.src}
                   alt={partner.alt}
-                  className="max-h-16 object-contain transition-all duration-300"
+                  className="object-contain transition-all duration-300 mx-auto max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24"
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             </SwiperSlide>

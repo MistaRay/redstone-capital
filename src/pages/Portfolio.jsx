@@ -105,7 +105,32 @@ const companies = [
 
 export default function Portfolio({ language = 'en' }) {
   const [mounted, setMounted] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null);
+  const [isTouch, setIsTouch] = useState(false);
+
   useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    // Detect touch device (mobile/tablet)
+    const checkTouch = () => {
+      setIsTouch(window.matchMedia('(hover: none) and (pointer: coarse)').matches);
+    };
+    checkTouch();
+    window.addEventListener('resize', checkTouch);
+    return () => window.removeEventListener('resize', checkTouch);
+  }, []);
+
+  // Close overlay when clicking outside (on mobile)
+  useEffect(() => {
+    if (!isTouch || openIndex === null) return;
+    const handleClick = (e) => {
+      if (!e.target.closest('.portfolio-card')) {
+        setOpenIndex(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [isTouch, openIndex]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-100 pt-36 pb-16 px-4">
       <h2 className="text-3xl font-bold text-red-800 mb-10 text-center">
@@ -118,16 +143,21 @@ export default function Portfolio({ language = 'en' }) {
             href={company.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative group rounded-xl shadow-lg bg-white overflow-hidden h-64 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer fade-in-up ${mounted ? 'fade-in-up-active' : ''}`}
+            className={`portfolio-card relative group rounded-xl shadow-lg bg-white overflow-hidden h-64 flex items-center justify-center transition-transform hover:scale-105 cursor-pointer fade-in-up ${mounted ? 'fade-in-up-active' : ''}`}
             style={{ transitionDelay: `${idx * 80}ms` }}
+            onClick={isTouch ? (e) => { e.preventDefault(); setOpenIndex(openIndex === idx ? null : idx); } : undefined}
           >
             <img 
               src={company.img} 
               alt={company.name[language === 'en' ? 'en' : 'zh']}
               className="w-full h-full object-contain p-6 bg-white"
             />
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+            {/* Overlay: hover for desktop, tap for mobile/tablet */}
+            <div
+              className={`absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6
+                ${isTouch && openIndex === idx ? '!opacity-100 z-20' : ''}`}
+              style={{ pointerEvents: isTouch && openIndex === idx ? 'auto' : undefined }}
+            >
               <div className="text-lg font-semibold mb-2">{company.sector[language === 'en' ? 'en' : 'zh']}</div>
               <div className="text-sm text-center">{company.info[language === 'en' ? 'en' : 'zh']}</div>
             </div>
