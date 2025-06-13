@@ -22,6 +22,18 @@ function FadeInUpStyle() {
   return null;
 }
 
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(form)).toString(),
+  })
+    .then(() => window.location = "/thanks")
+    .catch(error => alert(error));
+}
+
 function Contact({ language }) {
   return (
     <>
@@ -45,6 +57,7 @@ function Contact({ language }) {
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
               className="bg-red-50/80 p-4 sm:p-6 rounded-2xl shadow-lg w-full border border-red-200 mb-4 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.3s]"
             >
               <input type="hidden" name="form-name" value="contact" />
