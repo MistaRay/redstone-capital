@@ -86,10 +86,14 @@ function Home({ language }) {
       {/* Animated red gradient background as user scrolls to carousel */}
       <section
         ref={carouselSectionRef}
-        className={`w-full bg-white relative py-16 transition-all duration-1000 ${carouselInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+        className={`w-full bg-white relative py-16 transition-all duration-700 ease-out ${
+          carouselInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
         style={{ minHeight: 400 }}
       >
-        <div className={`transition-all duration-1000 ${carouselInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`transition-all duration-700 delay-100 ease-out ${
+          carouselInView ? 'opacity-100 scale-100' : 'opacity-0 scale-98'
+        }`}>
           <PartnerCarousel language={language} />
         </div>
       </section>
@@ -100,6 +104,9 @@ function Home({ language }) {
         }
         .animate-fadeinup {
           animation: fadeinup 1.1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+        .scale-98 {
+          transform: scale(0.98);
         }
       `}</style>
     </>

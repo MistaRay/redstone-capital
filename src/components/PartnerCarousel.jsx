@@ -64,28 +64,28 @@ export default function PartnerCarousel({ language = 'en' }) {
       <h2 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8">
         {language === 'en' ? 'Our Partners' : '我们的合作伙伴'}
       </h2>
-      <div className="flex flex-col gap-6 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
+      <div className="flex flex-col gap-6 sm:gap-8 max-w-7xl mx-auto px-2 sm:px-4">
         {/* Top row: moves left (default) */}
         <Swiper
           modules={[Autoplay]}
-          slidesPerView={5}
-          spaceBetween={30}
+          slidesPerView={6}
+          spaceBetween={40}
           breakpoints={{
             0: {
               slidesPerView: 2,
-              spaceBetween: 12,
-            },
-            640: {
-              slidesPerView: 3,
               spaceBetween: 16,
             },
-            768: {
+            640: {
               slidesPerView: 4,
               spaceBetween: 24,
             },
-            1024: {
+            768: {
               slidesPerView: 5,
-              spaceBetween: 30,
+              spaceBetween: 32,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 40,
             },
           }}
           loop={true}
@@ -112,24 +112,24 @@ export default function PartnerCarousel({ language = 'en' }) {
         {/* Bottom row: moves right (reverseDirection) */}
         <Swiper
           modules={[Autoplay]}
-          slidesPerView={5}
-          spaceBetween={30}
+          slidesPerView={6}
+          spaceBetween={40}
           breakpoints={{
             0: {
               slidesPerView: 2,
-              spaceBetween: 12,
-            },
-            640: {
-              slidesPerView: 3,
               spaceBetween: 16,
             },
-            768: {
+            640: {
               slidesPerView: 4,
               spaceBetween: 24,
             },
-            1024: {
+            768: {
               slidesPerView: 5,
-              spaceBetween: 30,
+              spaceBetween: 32,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 40,
             },
           }}
           loop={true}
