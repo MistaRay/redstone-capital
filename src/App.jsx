@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
+import Thanks from './pages/Thanks';
 import './App.css';
 import { useState } from 'react';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" element={<About language={language} />} />
             <Route path="/portfolio" element={<Portfolio language={language} />} />
             <Route path="/contact" element={<Contact language={language} />} />
+            <Route path="/thanks" element={<Thanks language={language} />} />
           </Routes>
         </main>
         <Footer />
