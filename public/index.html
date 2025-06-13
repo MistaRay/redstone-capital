@@ -8,10 +8,13 @@
   </head>
   <body>
     <!-- A hidden form that Netlify can detect during build -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="subject" value="New Contact Form Submission" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
+      <input name="bot-field" />
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

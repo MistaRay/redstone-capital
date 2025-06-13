@@ -55,13 +55,14 @@ function Contact({ language }) {
             <form 
               name="contact"
               method="POST"
-              netlify
-              netlify-honeypot="bot-field"
-              onSubmit={handleSubmit}
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/thanks"
               className="bg-red-50/80 p-4 sm:p-6 rounded-2xl shadow-lg w-full border border-red-200 mb-4 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.3s]"
             >
               <input type="hidden" name="form-name" value="contact" />
-              <p style={{ display: 'none' }}>
+              <input type="hidden" name="subject" value="New Contact Form Submission" />
+              <p className="hidden">
                 <label>
                   Don't fill this out if you're human: <input name="bot-field" />
                 </label>
