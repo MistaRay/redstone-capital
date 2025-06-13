@@ -55,7 +55,7 @@ function Contact({ language }) {
             <form 
               name="contact"
               method="POST"
-              data-netlify="true"
+              netlify
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="bg-red-50/80 p-4 sm:p-6 rounded-2xl shadow-lg w-full border border-red-200 mb-4 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.3s]"
