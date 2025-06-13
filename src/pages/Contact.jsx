@@ -25,13 +25,20 @@ function FadeInUpStyle() {
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
+  const formData = new FormData(form);
+  
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(new FormData(form)).toString(),
+    body: new URLSearchParams(formData).toString(),
   })
-    .then(() => window.location = "/thanks")
-    .catch(error => alert(error));
+    .then(() => {
+      // Navigate programmatically after successful submission
+      window.location.href = "/thanks";
+    })
+    .catch((error) => {
+      alert("Error submitting form: " + error);
+    });
 }
 
 function Contact({ language }) {
@@ -57,7 +64,7 @@ function Contact({ language }) {
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/thanks"
+              onSubmit={handleSubmit}
               className="bg-red-50/80 p-4 sm:p-6 rounded-2xl shadow-lg w-full border border-red-200 mb-4 opacity-0 translate-y-8 animate-fadeinup [animation-delay:0.3s]"
             >
               <input type="hidden" name="form-name" value="contact" />
